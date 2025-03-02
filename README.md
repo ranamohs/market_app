@@ -17,7 +17,9 @@ By using [Flutter BLoC](https://bloclibrary.dev/#/), the project enforces a clea
 
 ## Folder Structure
 
-├── app │ ├── mobile_layout.dart │ ├── tablet_layout.dart │ ├── widgets.dart │ ├── app.dart │ └── config.dart ├── core │ └── navigation │ ├── app_routes.dart │ ├── navigation.dart │ ├── navigation_helper.dart ├── features │ └── home │ ├── cubit │ │ ├── cart_cubit.dart │ │ └── cart_state.dart │ ├── data │ │ ├── cart_item_model.dart │ │ ├── cart_model.dart │ │ ├── discount_model.dart │ │ └── product_model.dart │ └── widget │ ├── product_card_widget.dart │ ├── tab_bar_widget.dart │ └── home_view.dart ├── gen │ └── assets.gen.dart ├── main.dart ├── ios └── macos
+![image](https://github.com/user-attachments/assets/f379ebe3-324f-40f9-b667-d61d2bf429d2)
+![image](https://github.com/user-attachments/assets/6f16a808-a088-45b6-9e64-0702e1e465ff)
+
 
 ---
 
