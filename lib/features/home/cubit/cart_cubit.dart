@@ -1,31 +1,37 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:interview/features/home/data/discount_model.dart';
+
 import '../data/cart_item_model.dart';
-import '../data/cart_model.dart';
 import '../data/prodect_model.dart';
+import '../interface/discount_strategy_interface.dart';
+import '../repository/cart_repository.dart';
 
 part 'cart_state.dart';
 
 class CartCubit extends Cubit<CartState> {
-  final Cart _cart = Cart();
-  final Map<String, DiscountModel> validPromoCodes;
-  final List<DiscountModel> _activeDiscounts = [];
+  final CartRepository _cartRepository;
+  final Map<String, DiscountStrategy> _availableDiscounts;
+  final List<DiscountStrategy> _activeDiscounts = [];
 
-  CartCubit({required this.validPromoCodes}) : super(CartInitial());
+  CartCubit({
+    required CartRepository cartRepository,
+    required Map<String, DiscountStrategy> availableDiscounts,
+  })  : _cartRepository = cartRepository,
+        _availableDiscounts = availableDiscounts,
+        super(CartInitial());
 
   void addProduct(Product product) {
-    _cart.addProduct(product);
+    _cartRepository.addProduct(product);
     _updateState();
   }
 
   void removeProduct(String productId) {
-    _cart.removeProduct(productId);
+    _cartRepository.removeProduct(productId);
     _updateState();
   }
 
   void applyPromoCode(String code) {
-    final discount = validPromoCodes[code];
+    final discount = _availableDiscounts[code];
     if (discount != null && !_activeDiscounts.contains(discount)) {
       _activeDiscounts.add(discount);
       _updateState();
@@ -33,12 +39,14 @@ class CartCubit extends Cubit<CartState> {
   }
 
   void _updateState() {
-    double total = _cart.subtotal;
+    double total = _cartRepository.subtotal;
+
     for (final discount in _activeDiscounts) {
       total = discount.apply(total);
     }
+
     emit(CartUpdated(
-      items: _cart.items,
+      items: _cartRepository.items,
       activeDiscounts: List.unmodifiable(_activeDiscounts),
       total: total < 0 ? 0 : total,
     ));

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interview/features/home/cubit/cart_cubit.dart';
-import 'package:interview/features/home/data/discount_model.dart';
 import 'package:interview/features/home/widget/product_item.dart';
 import 'package:interview/features/home/widget/tab_bar_widget.dart';
+import 'data/cart_model.dart';
+import 'data/strategies/discount_strategy.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -13,9 +14,10 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CartCubit(
-        validPromoCodes: {
-          'SAVE10': FixedDiscountModel(10),
-          'HALFOFF': PercentageDiscountModel(0.5),
+        cartRepository: Cart(),
+        availableDiscounts: {
+          'SAVE10': FixedDiscountStrategy(10),
+          'HALFOFF': PercentageDiscountStrategy(0.5),
         },
       ),
       child: Scaffold(
