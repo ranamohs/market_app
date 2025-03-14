@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interview/features/home/widget/product_card_widget.dart';
+import 'package:interview/features/home/views/widget/product_card_widget.dart';
+import '../../domain/models/prodect_model.dart';
 
-import '../data/prodect_model.dart';
 
 class ProductListWidget extends StatelessWidget {
   const ProductListWidget({super.key});

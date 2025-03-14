@@ -1,5 +1,5 @@
-import '../data/cart_item_model.dart';
-import '../data/prodect_model.dart';
+import '../models/cart_item_model.dart';
+import '../models/prodect_model.dart';
 
 abstract class CartRepository {
   List<CartItem> get items;

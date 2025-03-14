@@ -1,10 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../data/cart_item_model.dart';
-import '../data/prodect_model.dart';
-import '../interface/discount_strategy_interface.dart';
-import '../repository/cart_repository.dart';
+import '../domain/interface/discount_strategy_interface.dart';
+import '../domain/models/cart_item_model.dart';
+import '../domain/models/prodect_model.dart';
+import '../domain/repository/cart_repository.dart';
+
 
 part 'cart_state.dart';
 

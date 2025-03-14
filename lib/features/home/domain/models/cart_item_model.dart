@@ -1,4 +1,4 @@
-import 'package:interview/features/home/data/prodect_model.dart';
+import 'package:interview/features/home/domain/models/prodect_model.dart';
 
 class CartItem {
   final Product product;

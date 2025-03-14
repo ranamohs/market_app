@@ -1,10 +1,11 @@
 
 import 'package:get_it/get_it.dart';
+import '../../features/home/domain/interface/discount_strategy_interface.dart';
+import '../../features/home/domain/models/cart_model.dart';
+import '../../features/home/domain/repository/cart_repository.dart';
+import '../../features/home/domain/repository/discount_repository.dart';
 
-import '../../interface/discount_strategy_interface.dart';
-import '../../repository/cart_repository.dart';
-import '../cart_model.dart';
-import '../strategies/discount_strategy.dart';
+
 
 final getIt = GetIt.instance;
 

@@ -1,4 +1,4 @@
-import '../../../gen/assets.gen.dart';
+import '../../../../gen/assets.gen.dart';
 
 class Product {
   final int id;

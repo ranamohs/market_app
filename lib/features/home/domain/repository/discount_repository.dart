@@ -1,7 +1,5 @@
-// features/home/data/strategies/concrete_discount_strategies.dart
-
-
-import '../../interface/discount_strategy_interface.dart';
+import 'dart:developer';
+import '../interface/discount_strategy_interface.dart';
 
 class FixedDiscountStrategy implements DiscountStrategy {
   final double amount;
@@ -17,7 +15,7 @@ class PercentageDiscountStrategy implements DiscountStrategy {
 
   PercentageDiscountStrategy(this.percentage) {
     if (percentage < 0 || percentage > 1) {
-      throw ArgumentError('Percentage must be between 0 and 1');
+      log('Percentage must be between 0 and 1.');
     }
   }
 

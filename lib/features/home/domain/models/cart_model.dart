@@ -1,8 +1,8 @@
-
-import 'package:interview/features/home/data/prodect_model.dart';
+import 'package:interview/features/home/domain/models/prodect_model.dart';
 
 import '../repository/cart_repository.dart';
 import 'cart_item_model.dart';
+
 
 class Cart implements CartRepository {
   final List<CartItem> _items = [];

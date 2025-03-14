@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 abstract class DiscountModel {
   double apply(double currentTotal);
 }
@@ -16,7 +18,7 @@ class PercentageDiscountModel implements DiscountModel {
 
   PercentageDiscountModel(this.percentage) {
     if (percentage < 0 || percentage > 1) {
-      throw Exception('Percentage must be between 0 and 1.');
+      log('Percentage must be between 0 and 1.');
     }
   }
   @override

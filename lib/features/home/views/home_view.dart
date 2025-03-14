@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interview/features/home/cubit/cart_cubit.dart';
-import 'package:interview/features/home/widget/product_item.dart';
-import 'package:interview/features/home/widget/tab_bar_widget.dart';
-import 'data/cart_model.dart';
-import 'data/strategies/discount_strategy.dart';
+import 'package:interview/features/home/views/widget/product_item.dart';
+import 'package:interview/features/home/views/widget/tab_bar_widget.dart';
+import '../domain/models/cart_model.dart';
+import '../domain/repository/discount_repository.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

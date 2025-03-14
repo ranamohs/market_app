@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/cart_cubit.dart';
-import '../data/prodect_model.dart';
+import '../../cubit/cart_cubit.dart';
+import '../../domain/models/prodect_model.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -38,7 +38,6 @@ class ProductCard extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          // Product Name
           Text(
             product.name,
             style: TextStyle(
